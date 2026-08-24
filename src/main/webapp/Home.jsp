@@ -36,7 +36,7 @@
 
         <div class="actions">
             <a href="SignUp.jsp" class="btn btn-primary">Sign Up</a>
-            <a href="Login.jsp" class="btn btn-secondary">Log In</a>
+            <a href="LogIn.jsp" class="btn btn-secondary">Log In</a>
         </div>
     </main>
 
