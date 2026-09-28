@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+@font-face {
+  font-family: 'Qurova'; 
+  src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 6rem; 
+    background: transparent;
+    border-bottom: 1px solid rgba(243, 230, 210, 0.15);
+}
+
+
+.brand {
+    font-family: 'Qurova', 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F7F1E8;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.brand span {
+    color: #E0B36A;
+}
+
+
+.nav-middle {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a, .nav-logout, .nav-login {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(247, 241, 232, 0.85);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-login:hover {
+    color: rgb(227, 145, 32);
+}
+
+.nav-logout {
+    color: #ff6b6b;
+}
+
+.nav-logout:hover {
+    color: #ff8787;
+}
+
+.btn-seller{
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	font-family: "Montserrat", "Sans-Serif";
+	background: rgb(215, 134, 26);
+    color: #ffffff;
+    border: 1.5px solid #F3E6D2;
+    padding: 10px;
+    text-decoration: none !important;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-seller:hover {
+    background: #b77317;
+    border-color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 1.25rem 1.5rem;
+    }
+    .nav-links {
+        display: none;
+    }
+}

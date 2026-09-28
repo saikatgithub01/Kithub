@@ -20,7 +20,7 @@ html, body {
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     color: #F7F1E8;
     background: #1A120B;
     overflow-x: hidden;
@@ -43,11 +43,10 @@ body {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: url("../assets/hero_image.png");
+    background-image: url("../assets/dashboard_image.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    transform: scale(1.02);
 }
 
 .hero-overlay {
@@ -58,15 +57,15 @@ body {
         linear-gradient(
             105deg,
             rgba(18, 11, 6, 0.82) 0%,
-            rgba(18, 11, 6, 0.62) 38%,
-            rgba(18, 11, 6, 0.35) 62%,
-            rgba(18, 11, 6, 0.45) 100%
+            rgba(18, 11, 6, 0.62) 10%,
+            rgba(18, 11, 6, 0.35) 20%,
+            rgba(18, 11, 6, 0.45) 30%
         ),
         linear-gradient(
             to top,
             rgba(12, 8, 5, 0.75) 0%,
-            rgba(12, 8, 5, 0.15) 42%,
-            rgba(12, 8, 5, 0.35) 100%
+            rgba(12, 8, 5, 0.15) 35%,
+            rgba(12, 8, 5, 0.35) 80%
         );
 }
 

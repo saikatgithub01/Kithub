@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SignUp - Kithub</title>
-<link rel="stylesheet" href="css/SignUp.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/SignUp.css">
 </head>
 <body>
 <div class="auth-page">
@@ -23,10 +23,9 @@
             <input type="text" name="nm" class="form-control" placeholder="Full Name" required>
             <input type="email" name="email" class="form-control" placeholder="Email Address" required>
             <input type="text" name="city" class="form-control" placeholder="City / Campus" required>
-            <input type="text" name="uname" class="form-control" placeholder="Username" required>
             <input type="password" name="pass" class="form-control" placeholder="Password" required>
+            <input type = "submit" class="btn" value="Sign Up"/>
             
-            <button type="submit" class="btn">Sign Up</button>
         </form>
         
         <p class="auth-footer">

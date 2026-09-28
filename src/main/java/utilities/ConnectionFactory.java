@@ -1,24 +1,22 @@
 package utilities;
+import java.sql.*;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- * Servlet implementation class ConnectionFactory
- */
-@WebServlet("/ConnectionFactory")
-public class ConnectionFactory extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+public class ConnectionFactory {
+	private Connection cn = null;
+	public Connection getConn()
+	{
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kithubdb","root","SinhaSQL@01");
+		}
+		catch (ClassNotFoundException ce){
+			ce.printStackTrace();
+		}
+		catch(SQLException se) {
+			se.printStackTrace();
+		}
+		
+		return cn;
 	}
-
 }

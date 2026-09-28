@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Kithub</title>
-<link rel="stylesheet" href="css/Home_css.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/Home_css.css">
 </head>
+<link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/Kithub-icon.svg">
 <body>
 	<div class="hero-page">
 
@@ -20,11 +21,11 @@
         <a href="Home.jsp" class="brand">Kithub<span>.</span></a>
     </header>
 
-
     <main class="hero-content">
 
         <h1 class="title">
-            Where books<br>
+            Where books
+            <br>
             find new hands.
         </h1>
 

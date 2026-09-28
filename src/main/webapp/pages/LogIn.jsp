@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>LogIn - Kithub</title>
-<link rel="stylesheet" href="css/SignUp.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/SignUp.css">
 </head>
 <body>
 <div class="auth-page">
