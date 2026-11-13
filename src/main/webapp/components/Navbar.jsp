@@ -28,7 +28,7 @@
 	</div>
 	
 	<div class ="nav-right">
-		<a href="seller_register.jsp" class="btn-seller">Create Seller Account</a>
+		<a href="seller_login.jsp" class="btn-seller">Create Seller Account</a>
 	</div>
 </nav>
 </body>

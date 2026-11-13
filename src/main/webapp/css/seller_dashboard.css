@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+@font-face {
+  font-family: 'Qurova';
+  src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+html, body {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    color: #F7F1E8;
+    background: #1A120B;
+    overflow-x: hidden;
+}
+
+.ksp-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 4rem 4rem; 
+    isolation: isolate;
+}
+
+.ksp-bg {
+    position: fixed; inset: 0; z-index: -2;
+    background-image: url("../assets/hero_image.png");
+    background-size: cover; background-position: center center;
+}
+
+.ksp-overlay {
+    position: fixed; inset: 0; z-index: -1;
+    background: rgba(18, 11, 6, 0.82); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ksp-nav {
+    max-width: 1300px; margin: 0 auto; padding: 2rem 0;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand {
+    font-family: 'Qurova', sans-serif; font-size: 2rem;
+    letter-spacing: -0.02em; color: #F7F1E8; text-decoration: none;
+}
+.brand span { color: #E0B36A; }
+.ksp-nav-link {
+    font-size: 0.85rem; font-weight: 500; color: rgba(247, 241, 232, 0.75);
+    text-decoration: none; transition: color 0.3s ease;
+}
+.ksp-nav-link:hover { color: #E0B36A; }
+
+
+.ksp-main {
+    max-width: 1300px; margin: 0 auto;
+}
+
+.ksp-hello {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding: 2rem 0 3rem; border-bottom: 1px solid rgba(243, 230, 210, 0.1);
+    margin-bottom: 3rem;
+}
+.ksp-hello h1 {
+    font-size: 2.4rem; font-weight: 600; letter-spacing: -0.02em; color: #FBF6EE;
+}
+.ksp-hello h1 span { color: #E0B36A; }
+.ksp-hello p {
+    margin-top: 0.5rem; font-size: 0.95rem; color: rgba(247, 241, 232, 0.6);
+}
+
+
+.ksp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    background: #F3E6D2;
+    color: #1A120B;
+    border: 1px solid #F3E6D2;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.ksp-btn:hover { background: #FFFFFF; border-color: #FFFFFF; transform: translateY(-1px); }
+.ksp-btn-small { padding: 0.55rem 1.2rem; font-size: 1rem; }
+.ksp-btn-ghost {
+    background: transparent; color: #F3E6D2; border-color: rgba(243, 230, 210, 0.3);
+}
+.ksp-btn-ghost:hover { background: rgba(243, 230, 210, 0.08); border-color: #E0B36A; color: #FFFFFF; }
+.ksp-btn-danger {
+    background: transparent; color: #E0A79C; border-color: rgba(201, 106, 90, 0.4);
+}
+.ksp-btn-danger:hover { background: rgba(201, 106, 90, 0.15); border-color: #C96A5A; color: #FFFFFF; }
+
+
+.ksp-section-head { margin-bottom: 1.5rem; }
+.ksp-section-head h2 { font-size: 1.2rem; font-weight: 500; color: #FBF6EE; }
+.ksp-list-container { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4rem; }
+
+.ksp-card-horizontal {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+.ksp-card-horizontal:hover { background: rgba(255, 255, 255, 0.04); }
+
+.ksp-card-info { display: flex; flex-direction: column; gap: 0.4rem; }
+.ksp-tags { display: flex; gap: 0.5rem; }
+.ksp-tags span {
+    padding: 0.2rem 0.6rem; font-size: 0.65rem; font-weight: 600;
+    color: #1A120B; background: #E0B36A; border-radius: 2px; text-transform: uppercase;
+}
+.ksp-tags .tag-lend { background: #8DAA9D; }
+.ksp-card-info h3 { font-size: 1.1rem; font-weight: 500; color: #FBF6EE; margin-top: 0.2rem; }
+.ksp-card-info p { font-size: 0.8rem; color: rgba(247, 241, 232, 0.5); }
+
+.ksp-card-price { border-left: 1px solid rgba(255,255,255,0.08); padding-left: 2rem; }
+.ksp-card-price small { display: block; font-size: 0.7rem; color: rgba(247, 241, 232, 0.5); margin-bottom: 0.3rem;}
+.ksp-card-price strong { font-size: 1.1rem; font-weight: 600; color: #F3E6D2; }
+
+.ksp-card-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+
+
+.ksp-offer-row {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; align-items: center;
+    padding: 1.25rem 2rem; background: rgba(224, 179, 106, 0.03);
+    border: 1px solid rgba(224, 179, 106, 0.15); border-radius: 8px; margin-bottom: 1rem;
+}
+.ksp-offer-buyer { font-size: 0.85rem; color: #E0B36A; margin-top: 0.3rem; }
+.ksp-offer-amount { text-align: center; }
+.ksp-offer-amount strong { font-size: 1.4rem; font-weight: 600; color: #F3E6D2; }
+.ksp-status {
+    padding: 0.5rem 1.2rem; font-size: 0.75rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; text-align: center;
+}
+.ksp-status-accepted { color: #8DAA9D; border: 1px solid rgba(141, 170, 157, 0.4); background: rgba(141, 170, 157, 0.1); }
+.ksp-status-rejected { color: #E0A79C; border: 1px solid rgba(201, 106, 90, 0.4); background: rgba(201, 106, 90, 0.1); }
+
+
+.ksp-form-wide {
+    width: 100%; padding: 2.5rem; background: rgba(20, 15, 10, 0.6);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 230, 210, 0.1); border-radius: 8px;
+}
+.ksp-form-wide h2 { font-weight: 500; font-size: 1.5rem; color: #FBF6EE; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;}
+
+.ksp-form-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.ksp-form-full { grid-column: span 3; }
+.ksp-form-2col { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: rgba(224, 179, 106, 0.05); padding: 1rem; border: 1px dashed rgba(224, 179, 106, 0.3); border-radius: 4px;}
+
+.ksp-label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+	font-weight: 500; 
+	color: #f9f9f9; 
+	letter-spacing: 0.05em;}
+.ksp-input {
+    width: 100%; 
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1rem; 
+    color: #F7F1E8; 
+    outline: none; 
+    transition: border-color 0.3s;
+}
+.ksp-input:focus { border-color: #E0B36A; background: rgba(0,0,0,0.4); }
+textarea.ksp-input { resize: none; height: 80px; }
+.ksp-input option { color: #1A120B; }
+
+.ksp-form-footer {
+    display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 900px) {
+    .ksp-card-horizontal, .ksp-offer-row { grid-template-columns: 1fr; gap: 1rem; }
+    .ksp-card-price { border-left: none; padding-left: 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .ksp-form-grid { grid-template-columns: 1fr; }
+    .ksp-form-full, .ksp-form-2col { grid-column: span 1; }
+    .ksp-form-2col { grid-template-columns: 1fr; }
+}

@@ -2,9 +2,9 @@ package utilities;
 import java.sql.*;
 
 public class ConnectionFactory {
-	private Connection cn = null;
-	public Connection getConn()
+	public static Connection getConn()
 	{
+		Connection cn = null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

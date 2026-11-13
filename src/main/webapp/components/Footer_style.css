@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+@font-face {
+  font-family: 'Qurova'; 
+  src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+.site-footer {
+    background: #0E0A07;
+    border-top: 1px solid rgba(243, 230, 210, 0.10);
+    color: rgba(247, 241, 232, 0.78);
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 1.5rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(243, 230, 210, 0.10);
+}
+
+.footer-brand {
+    display: inline-block;
+    font-family: 'Qurova', 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #F7F1E8;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.9rem;
+}
+
+.footer-brand span {
+    color: #E0B36A;
+}
+
+.footer-tagline {
+    max-width: 20rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(247, 241, 232, 0.68);
+}
+
+.footer-col h4 {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.footer-col a {
+    display: block;
+    color: rgba(247, 241, 232, 0.68);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    transition: color 0.25s ease;
+}
+
+.footer-col a:hover {
+    color: #E0B36A;
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.55rem;
+}
+
+.footer-contact a {
+    display: inline;
+    color: #E0B36A;
+}
+
+.footer-form {
+    margin-top: 1.2rem;
+}
+
+.footer-form label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247, 241, 232, 0.55);
+    margin-bottom: 0.55rem;
+}
+
+.footer-form-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer-form-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(243, 230, 210, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: #F7F1E8;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+}
+
+.footer-form-row input::placeholder {
+    color: rgba(247, 241, 232, 0.40);
+}
+
+.footer-form-row input:focus {
+    border-color: #E0B36A;
+}
+
+.footer-form-row button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #F3E6D2;
+    color: #1A120B;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.footer-form-row button:hover {
+    background: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0 0.5rem;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(247, 241, 232, 0.5);
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-bottom-links a {
+    font-size: 0.8rem;
+    color: rgba(247, 241, 232, 0.5);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #E0B36A;
+}
+
+/* Footer responsive */
+@media (max-width: 900px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-inner {
+        padding: 3rem 1.25rem 1.25rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-form-row {
+        flex-direction: column;
+    }
+
+    .footer-form-row button {
+        width: 100%;
+    }
+}

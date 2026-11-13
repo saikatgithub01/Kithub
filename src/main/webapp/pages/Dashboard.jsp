@@ -10,7 +10,7 @@
 
     if (userName == null || userName.trim().isEmpty()) {
         userName = "Reader";
-    }  --%>
+    } %> --%>
 <!DOCTYPE html>
 <html>
 <head>
