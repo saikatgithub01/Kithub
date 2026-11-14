@@ -19,12 +19,19 @@
     <div class="form-container">
         <h2>Welcome Back</h2>
 
-        <form action="LoginServlet" method="post">
+        <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
+        
             <input type="email" name="email" class="form-control" placeholder="Email Address" required>
             <input type="password" name="pass" class="form-control" placeholder="Password" required>
             
-            <button type="submit" class="btn">Log In</button>
+            <button type="submit" class="btn" >Log In</button>
         </form>
+        
+        <% if ("invalid".equals(request.getParameter("error"))) { %>
+    <p style="color: #E0A79C; text-align: center; margin-top: 1rem;">
+        Invalid email or password. Please try again.
+    </p>
+<% } %>
         
         <p class="auth-footer">
             Don't have an account? <a href="SignUp.jsp">Sign Up</a>

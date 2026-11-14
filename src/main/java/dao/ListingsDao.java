@@ -119,4 +119,37 @@ public class ListingsDao {
             return false;
         }
     }
+    
+    public List<Listing> getAllActiveListings() {
+        List<Listing> list = new ArrayList<>();
+        // Fetch all listings ordered by newest first
+        String sql = "SELECT * FROM listings ORDER BY created_at DESC";
+                   
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+             
+            while (rs.next()) {
+                Listing l = new Listing();
+                l.setLid(rs.getInt("lid"));
+                l.setSellerPid(rs.getInt("seller_pid"));
+                l.setItemType(rs.getString("item_type"));
+                l.setTitle(rs.getString("title"));
+                l.setAuthor(rs.getString("author"));
+                l.setGenre(rs.getString("genre"));
+                l.setImageUrl(rs.getString("image_url"));
+                l.setMinPrice(rs.getDouble("min_price"));
+                l.setMaxPrice(rs.getDouble("max_price"));
+                l.setListingType(rs.getString("listing_type"));
+                
+                int lendDays = rs.getInt("lend_dur_days");
+                if (!rs.wasNull()) l.setLendDurDays(lendDays);
+                
+                list.add(l);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }

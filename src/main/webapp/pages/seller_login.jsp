@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>KSP-LogIn</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/seller_auth.css">
 </head>
 <body>
@@ -44,8 +44,12 @@
                 >
             </div>
 
-            <button type="submit" class="btn">Enter KSP</button>
+            <button type="submit" class="btn" >Enter KSP</button>
         </form>
+        
+        <% if ("invalid".equals(request.getParameter("error"))) { %>
+    		<p class="form-sub" style="color:#E0A79C; border:1px solid rgba(201,106,90,0.3); padding:0.75rem; border-radius:4px; 				background:rgba(201,106,90,0.08); margin-top:1rem;">Invalid Username or KSP ID. Please check and try again.</p>
+		<% } %>
 
         <p class="auth-footer">
             New seller?

@@ -24,12 +24,10 @@ public class RegisterServlet extends HttpServlet {
         boolean isRegistered = udao.registerUser(name, email, city, password);
 
         if (isRegistered) {
-            response.sendRedirect("LogIn.jsp?signup=success");
+            response.sendRedirect("pages/LogIn.jsp?signup=success");
         } else {
-            response.sendRedirect("SignUp.jsp?error=failed");
+            response.sendRedirect("pages/SignUp.jsp?error=failed");
         }
-        
-		udao.registerUser(name, email, city, password);
-		response.sendRedirect("register.jsp");
+
     }
 }

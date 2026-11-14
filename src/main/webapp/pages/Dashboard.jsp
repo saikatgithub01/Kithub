@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <%
+ <%
     String userEmail = (String) session.getAttribute("userEmail");
     String userName = (String) session.getAttribute("userName");
 
@@ -10,7 +10,9 @@
 
     if (userName == null || userName.trim().isEmpty()) {
         userName = "Reader";
-    } %> --%>
+    }
+ %> 
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +35,7 @@
 
 
     <main class="hero-content">
-        <h1 class="title">Namaste, <%-- <%= userName --%></h1>
+        <h1 class="title">Namaste, <%= userName %></h1>
 
         <p class="subtitle">
             Welcome to your personal book corner. Discover your next great read,
@@ -41,8 +43,8 @@
         </p>
 
         <div class="actions">
-            <a href="BrowseListings.jsp" class="btn btn-primary">Buy a Book</a>
-            <a href="Explore.jsp" class="btn btn-secondary">Explore</a>
+            <a href="Marketplace.jsp" class="btn btn-primary">Buy a Book</a>
+            <a href="Marketplace.jsp" class="btn btn-secondary">Explore</a>
         </div>
     </main>
 

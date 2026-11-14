@@ -19,7 +19,7 @@
     <div class="form-container">
         <h2>Create Account</h2>
 
-        <form action="RegisterServlet" method="post">
+        <form action="${pageContext.request.contextPath}/RegisterServlet" method="post">
             <input type="text" name="nm" class="form-control" placeholder="Full Name" required>
             <input type="email" name="email" class="form-control" placeholder="Email Address" required>
             <input type="text" name="city" class="form-control" placeholder="City / Campus" required>

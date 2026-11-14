@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #1A120B;
+    color: #F7F1E8;
+    min-height: 100vh;
+}
+
+/* ===== Hero Section ===== */
+.mk-hero {
+    background: linear-gradient(to bottom, rgba(20, 15, 10, 0.9), rgba(26, 18, 11, 1)), url('../assets/hero_image.png');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(243, 230, 210, 0.1);
+}
+
+.mk-hero h1 {
+    font-size: 2.8rem; font-weight: 700; color: #FBF6EE; letter-spacing: -0.02em; margin-bottom: 1rem;
+}
+.mk-hero h1 span { color: #E0B36A; }
+.mk-hero p {
+    font-size: 1.1rem; color: rgba(247, 241, 232, 0.7); max-width: 600px; margin: 0 auto;
+}
+
+/* ===== Container & Grid ===== */
+.mk-container {
+    max-width: 1300px; margin: 0 auto; padding: 4rem 2rem;
+}
+
+.mk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* ===== Premium Product Cards ===== */
+.mk-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Make whole card clickable */
+    display: flex;
+    flex-direction: column;
+}
+
+.mk-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(224, 179, 106, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mk-card-image {
+    height: 220px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Placeholder for missing book covers */
+.mk-cover-placeholder {
+    font-size: 3rem; color: rgba(247, 241, 232, 0.1);
+}
+
+.mk-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: #E0B36A; color: #1A120B;
+    padding: 0.3rem 0.8rem; font-size: 0.7rem; font-weight: 700;
+    border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.mk-badge.lend { background: #8DAA9D; }
+
+.mk-card-body {
+    padding: 1.5rem;
+    display: flex; flex-direction: column; flex-grow: 1;
+}
+
+.mk-card-type {
+    font-size: 0.75rem; color: rgba(247, 241, 232, 0.5); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+}
+
+.mk-card-title {
+    font-size: 1.2rem; font-weight: 600; color: #FBF6EE; margin-bottom: 0.4rem; line-height: 1.4;
+}
+
+.mk-card-author {
+    font-size: 0.85rem; color: rgba(247, 241, 232, 0.6); margin-bottom: 1.5rem;
+}
+
+.mk-card-price-box {
+    margin-top: auto;
+    padding-top: 1.2rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.mk-price-label {
+    font-size: 0.7rem; color: rgba(247, 241, 232, 0.5); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem;
+}
+
+.mk-price-value {
+    font-size: 1.1rem; font-weight: 600; color: #F3E6D2;
+}
+
+.mk-btn-view {
+    background: transparent; color: #E0B36A;
+    font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+.mk-card:hover .mk-btn-view { color: #FFFFFF; }
