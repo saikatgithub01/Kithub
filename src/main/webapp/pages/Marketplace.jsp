@@ -20,7 +20,6 @@
 </head>
 <body>
 
-<jsp:include page="../components/Navbar.jsp" />
 
 <header class="mk-hero">
     <h1>Explore the <span>Marketplace</span></h1>
@@ -40,12 +39,11 @@
                 <a href="book_details.jsp?lid=<%= b.getLid() %>" class="mk-card">
                     
                     <div class="mk-card-image">
-                        <!-- Shows Lend or Sale badge -->
+
                         <span class="mk-badge <%= "Lend".equals(b.getListingType()) ? "lend" : "" %>">
                             <%= b.getListingType() %>
                         </span>
-                        
-                        <!-- Shows image if available, else a placeholder -->
+
                         <% if (b.getImageUrl() != null && !b.getImageUrl().trim().isEmpty()) { %>
                             <img src="<%= b.getImageUrl() %>" alt="Book Cover" style="width:100%; height:100%; object-fit:cover;">
                         <% } else { %>
@@ -65,7 +63,7 @@
                                     &#8377;<%= String.format("%.0f", b.getMinPrice()) %> - &#8377;<%= String.format("%.0f", b.getMaxPrice()) %>
                                 </div>
                             </div>
-                            <div class="mk-btn-view">View &rarr;</div>
+                            <div class="mk-btn-view">Bid Now &rarr;</div>
                         </div>
                     </div>
                 </a>

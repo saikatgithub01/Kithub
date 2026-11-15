@@ -20,7 +20,7 @@
 
     <div class="form-container">
         <h2>Seller Login</h2>
-        <form action="SellerLoginServlet" method="post">
+        <form action="${pageContext.request.contextPath}/SellerLoginServlet" method="post">
 
 
             <div class="form-section">

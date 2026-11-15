@@ -8,7 +8,6 @@
         return;
     }
 
-    // Clear after reading so this page cannot be revisited
     session.removeAttribute("newKspId");
     session.removeAttribute("newKspUsername");
 %>
@@ -31,10 +30,6 @@
 
     <div class="form-container">
         <h2>KSP Account Created</h2>
-        <p class="form-sub">
-            Welcome to Kithub Seller Page, <strong><%= newKspUsername %></strong>.
-            Save your unique KSP ID below — it is your password for every future login.
-        </p>
 
         <div class="id-box id-box-ready" style="margin-top: 1rem;">
             <strong><%= newKspId %></strong>

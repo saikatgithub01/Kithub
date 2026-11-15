@@ -4,8 +4,7 @@
     HttpSession s = request.getSession();
     String sellerUsername = (String) s.getAttribute("sellerUsername");
     Integer sellerPid = (Integer) s.getAttribute("sellerProfileId");
-    
-    // Testing Fallbacks
+
     if (sellerUsername == null) sellerUsername = "Seller"; 
     if (sellerPid == null) sellerPid = 1; 
 
@@ -50,7 +49,6 @@
             </section>
         <% } else { %>
 
-            <!-- ===== Grid Listings ===== -->
             <section>
                 <div class="ksp-section-head">
                     <h2>Active Listings</h2>
@@ -84,14 +82,13 @@
                                     <a href="#offers" class="ksp-btn ksp-btn-ghost ksp-btn-small" style="opacity: 0.5; pointer-events: none;">No Offers Yet</a>
                                 <% } %>
                                 
-                                <a href="DeleteListingServlet?lid=<%= l.getLid() %>" class="ksp-btn ksp-btn-danger ksp-btn-small" onclick="return confirm('Delete this listing permanently? This cannot be undone.');">Delete</a>
+                                <a href="${pageContext.request.contextPath}/DeleteListServlet?lid=<%= l.getLid() %>" class="ksp-btn ksp-btn-danger ksp-btn-small" onclick="return confirm('Delete this listing permanently? This cannot be undone.');">Delete</a>
                             </div>
                         </article>
                     <% } %>
                 </div>
             </section>
 
-            <!-- ===== Incoming Offers ===== -->
             <% if (!offers.isEmpty()) { %>
             <section id="offers">
                 <div class="ksp-section-head">
@@ -110,16 +107,21 @@
                                 <strong>&#8377;<%= String.format("%.0f", o.getAmount()) %></strong>
                             </div>
                             <div class="ksp-offer-actions">
-                                <% if ("Pending".equals(o.getStatus())) { %>
-                                    <!-- These will need an UpdateBidServlet later -->
-                                    <a href="#" class="ksp-btn ksp-btn-small">Accept</a>
-                                    <a href="#" class="ksp-btn ksp-btn-danger ksp-btn-small">Reject</a>
-                                <% } else if ("Accepted".equals(o.getStatus())) { %>
-                                    <div class="ksp-status ksp-status-accepted">Accepted</div>
-                                <% } else { %>
-                                    <div class="ksp-status ksp-status-rejected">Rejected</div>
-                                <% } %>
-                            </div>
+    <% if ("Pending".equals(o.getStatus())) { %>
+
+        <a href="${pageContext.request.contextPath}/UpdateBidServlet?bid=<%= o.getBidId() %>&status=Accepted" 
+           class="ksp-btn ksp-btn-small">Accept</a>
+        
+        <a href="${pageContext.request.contextPath}/UpdateBidServlet?bid=<%= o.getBidId() %>&status=Rejected" 
+           class="ksp-btn ksp-btn-danger ksp-btn-small">Reject</a>
+
+    <% } else if ("Accepted".equals(o.getStatus())) { %>
+        <div class="ksp-status ksp-status-accepted">Accepted</div>
+
+    <% } else { %>
+        <div class="ksp-status ksp-status-rejected">Rejected</div>
+    <% } %>
+</div>
                         </article>
                     <% } %>
                 </div>

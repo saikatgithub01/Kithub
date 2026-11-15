@@ -122,7 +122,7 @@ public class ListingsDao {
     
     public List<Listing> getAllActiveListings() {
         List<Listing> list = new ArrayList<>();
-        // Fetch all listings ordered by newest first
+
         String sql = "SELECT * FROM listings ORDER BY created_at DESC";
                    
         try (Connection cn = ConnectionFactory.getConn();
@@ -151,5 +151,37 @@ public class ListingsDao {
             e.printStackTrace();
         }
         return list;
+    }
+    
+    public Listing getListingById(int lid) {
+        String sql = "SELECT * FROM listings WHERE lid = ?";
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+             
+            ps.setInt(1, lid);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Listing l = new Listing();
+                    l.setLid(rs.getInt("lid"));
+                    l.setSellerPid(rs.getInt("seller_pid"));
+                    l.setItemType(rs.getString("item_type"));
+                    l.setTitle(rs.getString("title"));
+                    l.setAuthor(rs.getString("author"));
+                    l.setGenre(rs.getString("genre"));
+                    l.setDescription(rs.getString("description"));
+                    l.setImageUrl(rs.getString("image_url"));
+                    l.setMinPrice(rs.getDouble("min_price"));
+                    l.setMaxPrice(rs.getDouble("max_price"));
+                    l.setListingType(rs.getString("listing_type"));
+                    
+                    int lendDays = rs.getInt("lend_dur_days");
+                    if (!rs.wasNull()) l.setLendDurDays(lendDays);
+                    return l;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

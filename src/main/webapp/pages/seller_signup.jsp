@@ -62,8 +62,8 @@
                     </strong>
                     <small>
                         ${sessionScope.pendingSellerUniqueId != null
-                            ? 'Save this ID now — it is your password for every KSP login'
-                            : 'Click Generate ID first — this code will be your KSP password'}
+                            ? 'Save this ID now - it is your password for every KSP login'
+                            : 'Click Generate ID first - this code will be your KSP password'}
                     </small>
                 </div>
             </div>

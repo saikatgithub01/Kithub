@@ -23,12 +23,13 @@
             <a href="<%= "Dashboard.jsp" %>">Home</a>
             <a href="#about">About</a>
             <a href="#categories">Categories</a>
+            <a href="my_bids.jsp">My Bids</a>
             <a href="#contact">Contact Us</a>
         </div>
 	</div>
 	
 	<div class ="nav-right">
-		<a href="seller_login.jsp" class="btn-seller">Create Seller Account</a>
+		<a href="seller_signup.jsp" class="btn-seller">Create Seller Account</a>
 	</div>
 </nav>
 </body>

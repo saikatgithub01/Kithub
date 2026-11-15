@@ -18,12 +18,12 @@
 
     <main class="ksp-main" style="display: flex; justify-content: center;">
         
-        <form action="AddListingServlet" method="post" class="ksp-form-wide">
+        <form action="${pageContext.request.contextPath}/AddListServlet" method="post" class="ksp-form-wide">
             <h2>Create New Listing</h2>
             
             <div class="ksp-form-grid">
                 
-                <!-- Row 1 -->
+                
                 <div>
                     <label class="ksp-label">Item Type</label>
                     <select name="item_type" class="ksp-input" required>
@@ -43,7 +43,7 @@
                     <input type="text" name="title" class="ksp-input" placeholder="e.g. Physics Vol 1" required>
                 </div>
 
-                <!-- Row 2 -->
+                
                 <div>
                     <label class="ksp-label">Author</label>
                     <input type="text" name="author" class="ksp-input" placeholder="Optional">
@@ -57,7 +57,7 @@
                     <input type="url" name="image_url" class="ksp-input" placeholder="https://...">
                 </div>
 
-                <!-- Row 3: The Price Engine -->
+                
                 <div class="ksp-form-2col">
                     <div>
                         <label class="ksp-label" style="color:#E0B36A;">Min Acceptable (&#8377;)</label>
@@ -73,7 +73,7 @@
                     <input type="number" name="lend_dur_days" class="ksp-input" placeholder="Leave blank if Sale">
                 </div>
 
-                <!-- Row 4 -->
+                
                 <div class="ksp-form-full">
                     <label class="ksp-label">Description & Condition</label>
                     <textarea name="description" class="ksp-input" placeholder="Mention condition, marks, edition..."></textarea>

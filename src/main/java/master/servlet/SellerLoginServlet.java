@@ -39,8 +39,7 @@ public class SellerLoginServlet extends HttpServlet {
             session.setAttribute("sellerUsername", sp.getSellerUname());
             session.setAttribute("sellerUniqueId", sp.getSellerUniqueId());
 
-            // Redirect to Seller Dashboard
-            response.sendRedirect("pages/seller_dashboard.jsp");
+            response.sendRedirect("pages/Seller_Dashboard.jsp");
         } else {
             // Failure: Redirect back to seller login with error
             response.sendRedirect("pages/seller_login.jsp?error=invalid");

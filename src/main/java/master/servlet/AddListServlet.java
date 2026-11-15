@@ -47,11 +47,11 @@ public class AddListServlet extends HttpServlet {
             }
 
             new ListingsDao().addListing(l);
-            response.sendRedirect("seller_dashboard.jsp");
+            response.sendRedirect("pages/Seller_Dashboard.jsp");
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("add_book.jsp?error=1");
+            response.sendRedirect("Seller_add_list.jsp?error=1");
         }
     }
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/DeleteListingServlet")
+@WebServlet("/DeleteListServlet")
 public class DeleteListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -23,6 +23,6 @@ public class DeleteListServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        response.sendRedirect("seller_dashboard.jsp");
+        response.sendRedirect("pages/Seller_Dashboard.jsp");
     }
 }
