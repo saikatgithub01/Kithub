@@ -29,3 +29,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Ignore local database credentials
+src/main/java/db.properties

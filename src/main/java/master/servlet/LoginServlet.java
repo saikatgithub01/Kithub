@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.SellerDao;
 import dao.UserDao;
 
 @WebServlet("/LoginServlet")
@@ -32,6 +33,21 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userId", Integer.parseInt(userData[0]));
             session.setAttribute("userName", userData[1]);
             session.setAttribute("userEmail", userData[2]);
+            
+         // after you set userId, userName, userEmail:
+            int uid = Integer.parseInt(userData[0]);
+            session.setAttribute("userId", uid);
+            session.setAttribute("userName", userData[1]);
+            session.setAttribute("userEmail", userData[2]);
+
+            SellerDao sdao = new SellerDao();
+            if (sdao.hasSellerProfile(uid)) {
+                session.setAttribute("hasSellerProfile", true);
+                Integer spid = sdao.getSellerPidByUserId(uid);
+                if (spid != null) session.setAttribute("sellerProfileId", spid); // optional
+            } else {
+                session.setAttribute("hasSellerProfile", false);
+            }
 
 
             response.sendRedirect("pages/Dashboard.jsp");

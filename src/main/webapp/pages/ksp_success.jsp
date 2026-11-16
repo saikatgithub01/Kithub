@@ -16,6 +16,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KSP Account Created</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/seller_auth.css">
 </head>
 <body>
@@ -36,13 +37,9 @@
             <small>This ID will not be shown again. Please save it securely.</small>
         </div>
 
-        <a href="seller_login.jsp" class="btn" style="display:block; text-align:center; text-decoration:none; margin-top:1rem;">
+        <a href="seller_login.jsp" class="btn" style="display:block; text-align:center; text-decoration:none; margin-top:1rem;letter-spacing: 0;">
             Go to KSP Login
-        </a>
-
-        <p class="auth-footer">
-            <a href="Dashboard.jsp">Back to Kithub Dashboard</a>
-        </p>
+        </a>  
     </div>
 </div>
 

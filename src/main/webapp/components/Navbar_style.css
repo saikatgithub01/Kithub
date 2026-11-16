@@ -74,6 +74,28 @@
 .nav-logout:hover {
     color: #ff8787;
 }
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-logout {
+    color: #E0A79C;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(201, 106, 90, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(201, 106, 90, 0.15);
+    border-color: #E0A79C;
+    color: #FFFFFF;
+}
 
 .btn-seller{
 	display: inline-flex;

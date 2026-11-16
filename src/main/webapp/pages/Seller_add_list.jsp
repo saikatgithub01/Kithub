@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KSP - Add Listing</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/seller_dashboard.css">
 </head>
 <body>

@@ -12,7 +12,7 @@ import dao.BidDao;
 @WebServlet("/PlaceBidServlet")
 public class PlaceBidServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         
         Integer userId = (Integer) session.getAttribute("userId");
@@ -22,14 +22,26 @@ public class PlaceBidServlet extends HttpServlet {
         }
 
         try {
+
             int lid = Integer.parseInt(request.getParameter("lid"));
             double amount = Double.parseDouble(request.getParameter("bid_amount"));
-            
-            BidDao dao = new BidDao();
-            dao.placeBid(lid, userId, amount);
 
-            response.sendRedirect("pages/my_bids.jsp");
-            
+            BidDao dao = new BidDao();
+
+            if (dao.hasOpenBid(lid, userId)) {
+
+                response.sendRedirect("pages/book_details.jsp?lid=" + lid + "&error=already_bid");
+                return;
+            }
+
+            boolean ok = dao.placeBid(lid, userId, amount);
+            if (ok) {
+                response.sendRedirect("pages/my_bids.jsp?msg=bid_placed");
+            } else {
+                response.sendRedirect("pages/book_details.jsp?lid=" + lid + "&error=failed");
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("pages/marketplace.jsp");

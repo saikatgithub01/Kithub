@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>LogIn - Kithub</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/SignUp.css">
 </head>
 <body>
@@ -15,6 +16,33 @@
     <nav class="auth-nav">
         <a href="Home.jsp" class="brand">Kithub<span>.</span></a>
     </nav>
+    
+    <%
+    String msg = request.getParameter("msg");
+    String error = request.getParameter("error");
+    String toastText = null;
+    String toastType = "ok";
+
+    if ("signup_ok".equals(msg)) {
+        toastText = "Account created. Please log in.";
+        toastType = "ok";
+    } else if ("welcome".equals(msg)) {
+        toastText = "Welcome back!";
+        toastType = "ok";
+    } else if ("invalid".equals(error)) {
+        toastText = "Invalid email or password.";
+        toastType = "err";
+    } else if ("failed".equals(error)) {
+        toastText = "Could not sign up. Try another email.";
+        toastType = "err";
+    }
+		%>
+		
+		<% if (toastText != null) { %>
+		<div id="toast" class="toast toast-<%= toastType %>">
+		    <%= toastText %>
+		</div>
+		<% } %>
 
     <div class="form-container">
         <h2>Welcome Back</h2>

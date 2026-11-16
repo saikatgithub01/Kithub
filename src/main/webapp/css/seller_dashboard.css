@@ -102,7 +102,7 @@ html, body {
 
 
 .ksp-section-head { margin-bottom: 1.5rem; }
-.ksp-section-head h2 { font-size: 1.2rem; font-weight: 500; color: #FBF6EE; }
+.ksp-section-head h2 { font-size: 1.2rem; font-weight: 700; color: #E0B36A; }
 .ksp-list-container { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4rem; }
 
 .ksp-card-horizontal {
@@ -118,12 +118,19 @@ html, body {
 .ksp-card-horizontal:hover { background: rgba(255, 255, 255, 0.04); }
 
 .ksp-card-info { display: flex; flex-direction: column; gap: 0.4rem; }
-.ksp-tags { display: flex; gap: 0.5rem; }
-.ksp-tags span {
-    padding: 0.2rem 0.6rem; font-size: 0.65rem; font-weight: 600;
-    color: #1A120B; background: #E0B36A; border-radius: 2px; text-transform: uppercase;
+.ksp-tags { display: flex; gap: 1rem; }
+.ksp-tag span {
+    padding: 0.2rem 0.6rem; 
+    font-size: 0.65rem; 
+    font-weight: 600;
+    color: #1A120B; 
+    background: #E0B36A; 
+    border-radius: 2px; 
+    text-transform: uppercase;
 }
-.ksp-tags .tag-lend { background: #8DAA9D; }
+.ksp-tags .tag-lend { 
+	background: #8DAA9D; 
+	}
 .ksp-card-info h3 { font-size: 1.1rem; font-weight: 500; color: #FBF6EE; margin-top: 0.2rem; }
 .ksp-card-info p { font-size: 0.8rem; color: rgba(247, 241, 232, 0.5); }
 

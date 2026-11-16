@@ -18,7 +18,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — Kithub</title>
+<title>Dashboard- Kithub</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/components/Navbar.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Dashboard.css">
 </head>
@@ -35,7 +36,7 @@
 
 
     <main class="hero-content">
-        <h1 class="title">Namaste, <%= userName %></h1>
+        <h1 class="title">Namaste, <span><%= userName %></span></h1>
 
         <p class="subtitle">
             Welcome to your personal book corner. Discover your next great read,

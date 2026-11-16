@@ -75,4 +75,26 @@ public class BidDao {
             return false;
         }
     }
+    
+
+    public String getLatestBidStatus(int lid, int buyerUid) {
+        String sql = "SELECT status FROM bids WHERE lid = ? AND buyer_uid = ? "
+                   + "ORDER BY created_at DESC LIMIT 1";
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, lid);
+            ps.setInt(2, buyerUid);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return rs.getString("status");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean hasOpenBid(int lid, int buyerUid) {
+        String status = getLatestBidStatus(lid, buyerUid);
+        return "Pending".equals(status) || "Accepted".equals(status);
+    }
 }

@@ -10,25 +10,48 @@ body {
     min-height: 100vh;
 }
 
-/* ===== Hero Section ===== */
+.hero-nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.brand {
+    font-family: 'Qurova', sans-serif;
+    font-size: 2rem;
+    font-weight:500;
+    letter-spacing: -0.02em;
+    color: #F7F1E8;
+    text-decoration: none;
+    
+}
+
+.brand span {
+    color: #ff0080;
+    color: #E0B36A; 
+}
+
 .mk-hero {
     background: linear-gradient(to bottom, rgba(20, 15, 10, 0.9), rgba(26, 18, 11, 1)), url('../assets/hero_image.png');
     background-size: cover;
     background-position: center;
-    padding: 6rem 2rem 4rem;
+    padding:1rem 2rem 2rem;
     text-align: center;
     border-bottom: 1px solid rgba(243, 230, 210, 0.1);
 }
 
 .mk-hero h1 {
-    font-size: 2.8rem; font-weight: 700; color: #FBF6EE; letter-spacing: -0.02em; margin-bottom: 1rem;
+    font-size: 2.8rem; font-weight: 700; color: #FBF6EE; letter-spacing: -0.02em; margin: 0rem 1rem;
 }
 .mk-hero h1 span { color: #E0B36A; }
 .mk-hero p {
     font-size: 1.1rem; color: rgba(247, 241, 232, 0.7); max-width: 600px; margin: 0 auto;
 }
 
-/* ===== Container & Grid ===== */
+
 .mk-container {
     max-width: 1300px; margin: 0 auto; padding: 4rem 2rem;
 }
@@ -39,14 +62,13 @@ body {
     gap: 2.5rem;
 }
 
-/* ===== Premium Product Cards ===== */
 .mk-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none; /* Make whole card clickable */
+    text-decoration: none;
     display: flex;
     flex-direction: column;
 }
@@ -65,7 +87,6 @@ body {
     position: relative;
 }
 
-/* Placeholder for missing book covers */
 .mk-cover-placeholder {
     font-size: 3rem; color: rgba(247, 241, 232, 0.1);
 }

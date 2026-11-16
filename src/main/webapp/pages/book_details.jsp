@@ -17,6 +17,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Bid on <%= book.getTitle() %></title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/book_details.css">
 </head>
 <body>

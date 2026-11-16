@@ -15,6 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Kithub Marketplace</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Marketplace.css">
 
 </head>
@@ -22,8 +23,10 @@
 
 
 <header class="mk-hero">
+	<header class="hero-nav">
+        <a href="Dashboard.jsp" class="brand">Kithub<span>.</span></a>
+    </header>
     <h1>Explore the <span>Marketplace</span></h1>
-    <p>Find books and notes from fellow students. Bid a fair price within the seller's range and strike a deal.</p>
 </header>
 
 <main class="mk-container">

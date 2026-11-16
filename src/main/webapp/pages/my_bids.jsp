@@ -13,10 +13,14 @@
 <head>
 <meta charset="UTF-8">
 <title>My Bids & Orders</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/my_bids.css">
 </head>
 <body>
 
+	<header class="hero-nav">
+        <a href="Dashboard.jsp" class="brand">Kithub<span>.</span></a>
+    </header>
 
 <div class="mb-page">
     <div class="mb-header">
@@ -48,9 +52,10 @@
                         <p>Seller: <span class="seller">@<%= bid.getSellerName() %></span></p>
                         
                         <% if ("Rejected".equals(bid.getStatus())) { %>
-                            <p style="color: #E0A79C; margin-top: 0.5rem; font-size: 0.8rem;">Seller rejected this offer. Try bidding higher.</p>
+                            <p style="color: #E0A79C; margin-top: 0.5rem; font-size: 1rem;">Seller rejected this offer. Try bidding 								higher.
+                            </p>
                         <% } else if ("Accepted".equals(bid.getStatus())) { %>
-                            <p style="color: #8DAA9D; margin-top: 0.5rem; font-size: 0.8rem;">Offer accepted! Ready for checkout.</p>
+                            <p style="color: #8DAA9D; margin-top: 0.5rem; font-size: 1rem;">Offer accepted! Ready for checkout.</p>
                         <% } %>
                     </div>
 

@@ -19,6 +19,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KSP - Seller Dashboard</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/seller_dashboard.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
     <div class="ksp-overlay"></div>
 
     <nav class="ksp-nav">
-        <a href="seller_dashboard.jsp" class="brand">Kithub<span>.</span></a>
+        <a href="Seller_Dashboard.jsp" class="brand">Kithub<span>.</span></a>
         <a href="Dashboard.jsp" class="ksp-nav-link">Switch to Buyer Dashboard</a>
     </nav>
 
@@ -38,7 +39,7 @@
                 <h1>Namaste, KS <span><%= sellerUsername %></span></h1>
                 <p>Manage your inventory, set price ranges, and finalize offers.</p>
             </div>
-            <a href="Seller_add_list.jsp" class="ksp-btn">Add New Listing</a>
+            <a href="Seller_add_list.jsp" class="ksp-btn">+ Add New Listing</a>
         </header>
 
         <% if (!hasListings) { %>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Kithub</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Home_css.css">
 </head>
 <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/Kithub-icon.svg">

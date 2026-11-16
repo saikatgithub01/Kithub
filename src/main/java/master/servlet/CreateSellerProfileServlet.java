@@ -49,6 +49,8 @@ public class CreateSellerProfileServlet extends HttpServlet {
         int newSellerPid = dao.createSellerProfile(sp);
 
         if (newSellerPid > 0) {
+        	session.setAttribute("hasSellerProfile", true);
+        	session.setAttribute("sellerProfileId", newSellerPid);
 
             session.removeAttribute("pendingSellerUsername");
             session.removeAttribute("pendingSellerUniqueId");
@@ -56,6 +58,7 @@ public class CreateSellerProfileServlet extends HttpServlet {
 
             session.setAttribute("newKspId", pendingId);
             session.setAttribute("newKspUsername", pendingUname);
+            
 
             response.sendRedirect("pages/ksp_success.jsp");
         } else {

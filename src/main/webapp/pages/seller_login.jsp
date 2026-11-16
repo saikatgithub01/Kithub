@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KSP-LogIn</title>
+<jsp:include page="/components/Favicon.jsp" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/seller_auth.css">
 </head>
 <body>

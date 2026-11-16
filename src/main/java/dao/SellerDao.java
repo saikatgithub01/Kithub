@@ -97,5 +97,33 @@ public class SellerDao {
             e.printStackTrace();
         }
         return null;
-}
+    }
+
+    public boolean hasSellerProfile(int userId) {
+        String sql = "SELECT 1 FROM seller_profiles WHERE user_id = ?";
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Integer getSellerPidByUserId(int userId) {
+        String sql = "SELECT seller_pid FROM seller_profiles WHERE user_id = ?";
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return rs.getInt("seller_pid");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
