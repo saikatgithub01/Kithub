@@ -1,6 +1,6 @@
 package dao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -79,7 +79,6 @@ public class ListingsDao {
 
     public List<OfferDTO> getSellerOffers(int sellerPid) {
         List<OfferDTO> offers = new ArrayList<>();
-        // Maps correctly to your updated DB (buyer_uid = users.uid)
         String sql = "SELECT b.bid_id, l.title, u.name AS buyer_name, b.amount, b.status "
                    + "FROM bids b "
                    + "JOIN listings l ON b.lid = l.lid "
@@ -183,5 +182,40 @@ public class ListingsDao {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    public List<Listing> searchListingsByTitle(String keyword) {
+        List<Listing> list = new ArrayList<>();
+        String sql = "SELECT * FROM listings WHERE title LIKE ? ORDER BY created_at DESC";
+
+        try (Connection cn = ConnectionFactory.getConn();
+             PreparedStatement ps = cn.prepareStatement(sql)) {
+
+            ps.setString(1, "%" + keyword + "%");
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Listing l = new Listing();
+                    l.setLid(rs.getInt("lid"));
+                    l.setSellerPid(rs.getInt("seller_pid"));
+                    l.setItemType(rs.getString("item_type"));
+                    l.setTitle(rs.getString("title"));
+                    l.setAuthor(rs.getString("author"));
+                    l.setGenre(rs.getString("genre"));
+                    l.setImageUrl(rs.getString("image_url"));
+                    l.setMinPrice(rs.getDouble("min_price"));
+                    l.setMaxPrice(rs.getDouble("max_price"));
+                    l.setListingType(rs.getString("listing_type"));
+
+                    int lendDays = rs.getInt("lend_dur_days");
+                    if (!rs.wasNull()) l.setLendDurDays(lendDays);
+
+                    list.add(l);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

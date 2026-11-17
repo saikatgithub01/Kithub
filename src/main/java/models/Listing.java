@@ -14,9 +14,9 @@ public class Listing {
     private String listingType;
     private Integer lendDurDays;
     
-    private int offerCount; // Transient variable for the UI button
+    private int offerCount;
 
-    // Getters and Setters
+
     public int getLid() { return lid; }
     public void setLid(int lid) { this.lid = lid; }
 

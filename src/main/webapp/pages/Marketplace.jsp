@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List, dao.ListingsDao, models.Listing" %>
 <%
-
     if (session.getAttribute("userEmail") == null) {
         response.sendRedirect("LogIn.jsp");
         return;
     }
 
     ListingsDao dao = new ListingsDao();
-    List<Listing> books = dao.getAllActiveListings();
+    String q = request.getParameter("q");
+    List<Listing> books;
+
+    if (q != null && !q.trim().isEmpty()) {
+        q = q.trim();
+        books = dao.searchListingsByTitle(q);
+    } else {
+        q = "";
+        books = dao.getAllActiveListings();
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -27,7 +35,21 @@
         <a href="Dashboard.jsp" class="brand">Kithub<span>.</span></a>
     </header>
     <h1>Explore the <span>Marketplace</span></h1>
+    
+    <form action="" method="get" class="search-bar">
+    <input type="text" name="q" placeholder="Search by book name..."
+           value="<%= q %>" autocomplete="off">
+    <button type="submit">Search</button>
+    <% if (!q.isEmpty()) { %>
+        <a href="?" class="clear-btn">Clear</a>
+    <% } %>
+</form>
+
+<% if (books.isEmpty() && !q.isEmpty()) { %>
+    <p class="no-results">No books found for "<strong><%= q %></strong>".</p>
+<% } %>
 </header>
+
 
 <main class="mk-container">
     
